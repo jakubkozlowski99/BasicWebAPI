@@ -1,6 +1,36 @@
-@BasicWebAPI_HostAddress = http://localhost:5262
+@rootURL = http://localhost:5262
 
-GET {{BasicWebAPI_HostAddress}}/weatherforecast/
+GET {{rootURL}}/weatherforecast/
 Accept: application/json
 
 ###
+GET {{rootURL}}/api/books
+Accept: application/json
+
+###
+GET {{rootURL}}/api/books/1
+Accept: application/json
+
+###
+POST {{rootURL}}/api/books
+Content-Type: application/json
+
+{
+    "title": "New Book",
+    "author": "New Author",
+    "yearPublished": 2023
+}
+
+###
+PUT {{rootURL}}/api/books/6
+Content-Type: application/json
+
+{
+    "title": "Updated Book",
+    "author": "Updated Author",
+    "yearPublished": 2024
+}
+
+###
+DELETE {{rootURL}}/api/books/6
+
